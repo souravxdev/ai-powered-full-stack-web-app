@@ -9,8 +9,10 @@ const port = process.env.PORT || 3000;
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello from Bun!");
-  // res.send(process.env.GROQ_API_KEY);
+});
 
+app.get("/api/hello", (req: Request, res: Response) => {
+  res.json({ message: "Hello world!" });
 });
 
 app.listen(port, () => {
